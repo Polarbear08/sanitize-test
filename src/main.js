@@ -1,6 +1,6 @@
 const sanitizeHtml = require('sanitize-html')
 
-const dirty = 'some really tacky HTML'
+let dirty = 'some really tacky HTML'
 let clean = sanitizeHtml(dirty)
 
 console.log(dirty)
@@ -20,3 +20,23 @@ console.log(clean)
 clean = sanitizeHtml(dirty, {
     allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img'])
 })
+
+
+dirty = '<a href="http://somelink.com"></a>'
+
+clean = sanitizeHtml(dirty, {
+    allowedAttributes: {
+        'a': ['href']
+    },
+    transformTags: {
+        'a': function (tagName, attribs) {
+            return {
+                tagName: 'a',
+                text: 'Some text'
+            }
+        }
+    }
+})
+
+console.log(dirty)
+console.log(clean)
