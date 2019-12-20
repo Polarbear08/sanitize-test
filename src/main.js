@@ -16,3 +16,7 @@ clean = sanitizeHtml(dirty, {
 })
 
 console.log(clean)
+
+clean = sanitizeHtml(dirty, {
+    allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img'])
+})
