@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Polarbear08/sanitize-test/issues"
   },
-  "homepage": "https://github.com/Polarbear08/sanitize-test#readme"
+  "homepage": "https://github.com/Polarbear08/sanitize-test#readme",
+  "dependencies": {
+    "sanitize-html": "^1.20.1"
+  }
 }
